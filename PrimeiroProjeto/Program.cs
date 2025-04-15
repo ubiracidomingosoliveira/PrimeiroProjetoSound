@@ -31,17 +31,13 @@ void ExibirOpcoesDoMenu()
     {
         case 1: RegistrarBanda();
             break;
-        case 2:
-            Console.WriteLine("Você escolheu a opção" + opcaoEscolhidaNumerica);
+        case 2: MostrarBandasRegistradas();
             break;
-        case 3:
-            Console.WriteLine("Você Escolheu a opção " + opcaoEscolhidaNumerica);
+        case 3: Console.WriteLine("Você Escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        case 4:
-            Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
+        case 4: Console.WriteLine("Você escolheu a opção " + opcaoEscolhidaNumerica);
             break;
-        case -1:
-            Console.WriteLine("Tchau tchal :)");
+        case -1: Console.WriteLine("Tchau tchal :)");
             break;
         default: Console.WriteLine("Opção inválida!");
             break;
@@ -58,7 +54,22 @@ void ExibirOpcoesDoMenu()
         Console.Clear();
         ExibirOpcoesDoMenu();
     }
+    void MostrarBandasRegistradas()
+    {
+        Console.Clear();
+        Console.WriteLine("************************************************");
+        Console.WriteLine("     Exibindo todas as bandas registradas!");
+        Console.WriteLine("************************************************");
+        for (int i = 0; i < ListaDasBandas.Count; i++) 
+        {
+            Console.WriteLine($" Banda: {ListaDasBandas[i]}");
+            
+        }
+        //ExibirOpcoesDoMenu();
+    }
+
     
 }
 ExibirLogo();
 ExibirOpcoesDoMenu();
+
