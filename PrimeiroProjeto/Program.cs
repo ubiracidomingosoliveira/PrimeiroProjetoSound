@@ -1,6 +1,8 @@
 ﻿using System.Globalization;
 
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
+List<string> ListaDasBandas = new List<string>();
+
 void ExibirLogo()
 {
     Console.WriteLine(@"
@@ -50,10 +52,11 @@ void ExibirOpcoesDoMenu()
         Console.WriteLine("Registro de bandas");
         Console.Write("Digite o nome da banda que deseja registrar: ");
         string nomeDaBanda = Console.ReadLine()!;
+        ListaDasBandas.Add(nomeDaBanda);
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(2000);
         Console.Clear();
-        ExibirLogo();
+        ExibirOpcoesDoMenu();
     }
     
 }
