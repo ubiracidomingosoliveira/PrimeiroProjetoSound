@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
-List<string> ListaDasBandas = new List<string>();
+List<string> ListaDasBandas = new List<string>() { " Calipso", "U2", "The Beatles"};
 
 void ExibirLogo()
 {
@@ -62,10 +62,13 @@ void ExibirOpcoesDoMenu()
         Console.WriteLine("************************************************");
         for (int i = 0; i < ListaDasBandas.Count; i++) 
         {
-            Console.WriteLine($" Banda: {ListaDasBandas[i]}");
-            
+            Console.WriteLine($" Banda: {ListaDasBandas[i]}\n");            
         }
-        //ExibirOpcoesDoMenu();
+        Thread.Sleep(2000);
+        Console.WriteLine("\nDigite uma tecla para voltar ao meunu");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesDoMenu();
     }
 
     
