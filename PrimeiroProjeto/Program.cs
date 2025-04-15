@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
-List<string> ListaDasBandas = new List<string>() { " Calipso", "U2", "The Beatles"};
+List<string> ListaDasBandas = new List<string>() { "Calypso", "U2", "The Beatles"};
 
 void ExibirLogo()
 {
@@ -57,13 +57,15 @@ void ExibirOpcoesDoMenu()
     void MostrarBandasRegistradas()
     {
         Console.Clear();
-        Console.WriteLine("************************************************");
-        Console.WriteLine("     Exibindo todas as bandas registradas!");
-        Console.WriteLine("************************************************");
-        for (int i = 0; i < ListaDasBandas.Count; i++) 
-        {
-            Console.WriteLine($" Banda: {ListaDasBandas[i]}\n");            
-        }
+        Console.WriteLine("**************************************");
+        Console.WriteLine(" Exibindo todas as bandas registradas!");
+        Console.WriteLine("**************************************");
+        //for (int i = 0; i < ListaDasBandas.Count; i++) 
+        //{
+        //    Console.WriteLine($" Banda: {ListaDasBandas[i]}\n");            
+        //}
+        foreach(string bandas in ListaDasBandas)
+        Console.WriteLine(bandas);
         Thread.Sleep(2000);
         Console.WriteLine("\nDigite uma tecla para voltar ao meunu");
         Console.ReadKey();
