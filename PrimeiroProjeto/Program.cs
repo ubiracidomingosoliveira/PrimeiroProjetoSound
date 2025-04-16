@@ -3,6 +3,9 @@
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
 List<string> ListaDasBandas = new List<string>() { "Calypso\n", "U2\n", "The\n", "Beatles"};
 
+ExibirLogo();
+ExibirOpcoesDoMenu();
+
 void ExibirLogo()
 {
     Console.WriteLine(@"
@@ -23,10 +26,9 @@ void ExibirOpcoesDoMenu()
     Console.WriteLine("digite 4 para a média de uma banda\n");
     Console.WriteLine("Digite -1 para sair");
 
-    Console.Write("\nDigite a sua opção: ");
+    Console.WriteLine("\nDigite a sua opção: ");
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
-    ExibirLogo();
 
     switch (opcaoEscolhidaNumerica)
     {
@@ -48,11 +50,15 @@ void ExibirOpcoesDoMenu()
         Console.Clear();
         ExibirTituloDaOpcao("Registro das bandas!");
         Console.Write("Digite o nome da banda que deseja registrar: ");
+        
         string nomeDaBanda = Console.ReadLine()!;
         ListaDasBandas.Add(nomeDaBanda);
+
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
         Thread.Sleep(2000);
         Console.Clear();
+
+        ExibirLogo();
         ExibirOpcoesDoMenu();
     }
     void MostrarBandasRegistradas()
@@ -71,9 +77,10 @@ void ExibirOpcoesDoMenu()
         Console.WriteLine("\nDigite uma tecla para voltar ao meunu");
         Console.ReadKey();
         Console.Clear();
+
+        ExibirLogo();
         ExibirOpcoesDoMenu();
     }
-
     void ExibirTituloDaOpcao(string titulo) 
     {
         int QauntidadeDeLetras = titulo.Length;
@@ -85,6 +92,4 @@ void ExibirOpcoesDoMenu()
     }
     
 }
-ExibirLogo();
-ExibirOpcoesDoMenu();
 
