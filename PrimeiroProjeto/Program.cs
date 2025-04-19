@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 
 string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
-List<string> ListaDasBandas = new List<string>() { "Calypso\n", "U2\n", "The\n", "Beatles"};
+List<string> ListaDasBandas = new List<string>() { "Calypso", "U2", "The Beatles"};
 
 ExibirLogo();
 ExibirOpcoesDoMenu();
@@ -26,7 +26,7 @@ void ExibirOpcoesDoMenu()
     Console.WriteLine("digite 4 para a média de uma banda\n");
     Console.WriteLine("Digite -1 para sair");
 
-    Console.WriteLine("\nDigite a sua opção: ");
+    Console.Write("\nDigite a sua opção: ");
     string opcaoEscolhida = Console.ReadLine()!;
     int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
@@ -65,16 +65,16 @@ void ExibirOpcoesDoMenu()
     {
         Console.Clear();
         ExibirTituloDaOpcao("Exibindo todas as bandas registradas na nossa aplicação!");
-        //for (int i = 0; i < ListaDasBandas.Count; i++) 
+        //for (int i = 0; i < ListaDasBandas.Count; i++) // Opção com o for
         //{
         //    Console.WriteLine($" Banda: {ListaDasBandas[i]}\n");            
         //}
-        foreach(string bandas in ListaDasBandas) 
+        foreach (string bandas in ListaDasBandas) // Aqui com foreach
         {
             Console.WriteLine(bandas);
         }
         Thread.Sleep(2000);
-        Console.WriteLine("\nDigite uma tecla para voltar ao meunu");
+        Console.Write("\nDigite uma tecla para voltar ao meunu ");
         Console.ReadKey();
         Console.Clear();
 
