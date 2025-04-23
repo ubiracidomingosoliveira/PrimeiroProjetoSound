@@ -4,6 +4,8 @@ string mensagemDeBoasVindas = "Boas Vindas ao Screen Soud";
 Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List <int>>();
 bandasRegistradas.Add("Linkin Park", new List<int> {10, 2, 10 });
 bandasRegistradas.Add("The Beatles", new List<int>());
+bandasRegistradas.Add("U2", new List<int>());
+bandasRegistradas.Add("Ira", new List<int>());
 ExibirLogo();
 void ExibirLogo()
 {
@@ -72,7 +74,6 @@ void ExibirOpcoesDoMenu()
         Console.Write("\nDigite uma tecla para voltar ao menu ");
         Console.ReadKey();
         Console.Clear();
-
         ExibirLogo();
         ExibirOpcoesDoMenu();
     }
@@ -92,9 +93,18 @@ void ExibirOpcoesDoMenu()
         ExibirTituloDaOpcao("Avaliar banda");
         Console.Write("Digite o nome da banda que deseja avaliar: ");
         string nomeDabanda = Console.ReadLine()!;
+        Console.WriteLine();
         if (bandasRegistradas.ContainsKey(nomeDabanda)) 
         {
-
+            Console.Write($"Qaul a nota que a banda {nomeDabanda} merece: ");
+            int nota = int.Parse(Console.ReadLine()!);
+            bandasRegistradas[nomeDabanda].Add(nota);
+            Console.WriteLine($"\nA nota {nota} foi registrada com sucesso para a banda {nomeDabanda}\n");           
+            Thread.Sleep(3000);            
+            Console.Clear();
+            ExibirLogo();
+            ExibirOpcoesDoMenu();
+           
         }
         else 
         {
@@ -102,6 +112,7 @@ void ExibirOpcoesDoMenu()
             Console.WriteLine("Digite uma tecla para voltar ao menu inicial");
             Console.ReadKey();
             Console.Clear();
+            ExibirLogo();
             ExibirOpcoesDoMenu();
         }
         
