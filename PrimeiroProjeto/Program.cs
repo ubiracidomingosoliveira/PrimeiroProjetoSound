@@ -114,8 +114,7 @@ void ExibirOpcoesDoMenu()
             Console.Clear();
             ExibirLogo();
             ExibirOpcoesDoMenu();
-        }
-        
+        }  
 
     }
     
